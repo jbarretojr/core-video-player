@@ -1,7 +1,7 @@
 name: core_video_player
 description: A customizable video player widget for Flutter.
 version: 1.0.0
-publish_to: none
+homepage: https://github.com/jbarretojr/core-video-player
 
 environment:
   sdk: ^3.8.1
@@ -15,8 +15,8 @@ dependencies:
     sdk: flutter
   http: ^1.5.0
   keep_screen_on: ^4.0.0
-  platform: 3.1.6
-  video_player: 2.10.0
+  platform: ^3.1.6
+  video_player: ^2.10.0
 
 dev_dependencies:
   flutter_test:
