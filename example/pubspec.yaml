@@ -1,0 +1,20 @@
+name: core_video_player_example
+description: Demonstrates how to use the Video player for Flutter.
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  core_video_player:
+    path: ../
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true

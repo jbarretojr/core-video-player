@@ -1,0 +1,11 @@
+import: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    public_member_api_docs: false
+    use_if_null_to_convert_nulls_to_bools: false
+    lines_longer_than_80_chars: false
+    avoid_positional_boolean_parameters: false
+
+formatter:
+  page_width: 120
