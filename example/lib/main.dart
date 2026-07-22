@@ -1,55 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:core_video_player/core_video_player.dart';
 
-void main() => runApp(const MyApp());
+import 'full_example/full_example_app.dart';
+import 'simple_example.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+void main() => runApp(const ExampleApp());
 
-  @override
-  MyAppState createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> {
-  CorePlayerController playerController = CorePlayerController.init();
-  Map<CorePlayerResolution, Uri> resolutions = {
-    CorePlayerResolution.p480: Uri.parse(
-      'https://dn801203.us.archive.org/0/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4',
-    ),
-  };
-
-  @override
-  void initState() {
-    playerController.changeDatasource(
-      CorePlayerDatasource(
-        title: 'Sample title',
-        description: 'Sample description',
-        banner: Uri.parse(
-          'https://blog.codemagic.io/uploads/covers/codemagic-blog-youtube-flutter-from-scratch-flutter-project-structure-and-widgets-3-thumbnail.png',
-        ),
-        hasNext: false,
-        hasPrev: false,
-        resolutions: resolutions,
-      ),
-    );
-    super.initState();
-  }
+class ExampleApp extends StatelessWidget {
+  const ExampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Core Video Player')),
-        body: SafeArea(
-          child: AspectRatio(
-            aspectRatio: 16 / 9,
-            child: CorePlayer(
-              playerController,
-              onTapConfig: (CorePlayerControlsConfig config) {},
-              onTapSpeed: (CorePlayerControlsConfig config) {},
-            ),
+    return const MaterialApp(home: ExampleMenuPage());
+  }
+}
+
+/// Lets the user pick between the two example apps: a minimal usage of
+/// [CorePlayer] and a more complete demo with playlist, miniplayer, auto
+/// rotation and settings.
+class ExampleMenuPage extends StatelessWidget {
+  const ExampleMenuPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Core Video Player')),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: const Icon(Icons.play_circle_outline),
+            title: const Text('Simple example'),
+            subtitle: const Text('Basic CorePlayer usage'),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SimpleExamplePage())),
           ),
-        ),
+          ListTile(
+            leading: const Icon(Icons.video_library_outlined),
+            title: const Text('Full example'),
+            subtitle: const Text('Playlist, miniplayer, auto rotation and settings'),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FullExamplePage())),
+          ),
+        ],
       ),
     );
   }
