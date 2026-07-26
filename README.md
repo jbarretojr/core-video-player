@@ -13,7 +13,7 @@
 |-------------|---------|-------|--------|-------|
 | **Support** | SDK 24+ | 13.0+ | 10.15+ | Any\* |
 
-![The example app running in iOS](https://github.com/jbarretojr/core-video-player/doc/demo_iphone.gif?raw=true)
+![The example app running in iOS](https://github.com/jbarretojr/core-video-player/blob/master/doc/demo_iphone.gif?raw=true)
 
 ## Features
 
