@@ -1,8 +1,19 @@
-# core_video_player
+<h2 align="center">Core Video Player</h2>
 
-A customizable video player widget for Flutter.
+<p align="center"> A customizable video player widget for Flutter. Built on top of <a href="https://pub.dev/packages/video_player">video_player</a>, <code>core_video_player</code> provides a ready-made layout and controls, plus extra functionality such as fullscreen, picture-in-picture, subtitles, Chromecast hooks, and automatic reconnection handling. </p>
 
-Built on top of [video_player](https://pub.dev/packages/video_player), `core_video_player` provides a ready-made layout and controls, plus extra functionality such as fullscreen, picture-in-picture, subtitles, Chromecast hooks, and automatic reconnection handling.
+<p align="center">
+<a href="https://pub.dev/packages/core_video_player"><img src="https://img.shields.io/pub/v/core_video_player.svg" alt="pub"></a>
+<a href="https://github.com/jbarretojr/core-video-player"><img src="https://img.shields.io/github/stars/jbarretojr/core-video-player?color=deeppink" alt="Stars"></a>
+</p>
+
+---
+
+|             | Android | iOS   | macOS  | Web   |
+|-------------|---------|-------|--------|-------|
+| **Support** | SDK 24+ | 13.0+ | 10.15+ | Any\* |
+
+![The example app running in iOS](https://github.com/jbarretojr/core-video-player/doc/demo_iphone.gif?raw=true)
 
 ## Features
 
@@ -19,12 +30,13 @@ Built on top of [video_player](https://pub.dev/packages/video_player), `core_vid
 
 Add `core_video_player` to your `pubspec.yaml`:
 
+or 
+
+flutter pub add core_video_player
+
 ```yaml
 dependencies:
-  core_video_player:
-    git:
-      url: <your-repository-url>
-      ref: master
+  core_video_player: ^1.1.0
 ```
 
 Then install the dependency:
@@ -78,25 +90,6 @@ final playerController = CorePlayerController.init(
 );
 ```
 
-## Project structure
-
-```sh
-lib/
-|- src/
-|  |- contracts/  # Abstractions over connectivity, keep-screen-on and video_player
-|  |- models/     # Data models and enums
-|  |- utils/      # Utility functions and custom icon access
-|  |- widgets/
-|  |  |- controls/                   # Player control widgets
-|  |  |- core_player_banner.dart      # Banner shown before the video is initialized
-|  |  |- core_player_fullscreen.dart  # Fullscreen screen
-|  |  |- core_player_subtitles.dart   # Subtitle widget
-|  |  |- core_player_widget.dart      # Base classes for the player widgets
-|  |- core_player_controller.dart     # Player controller
-|  |- core_player.dart                # Main widget
-|- core_video_player.dart              # Exports the controller, widget and models
-```
-
 ## Roadmap
 
 - [x] Playback controls
@@ -106,9 +99,9 @@ lib/
 - [x] Keep screen on during playback
 - [x] Connectivity check and automatic reconnection
 - [x] Chromecast (click and layout events only — connection and playback must be handled through your own integration)
-- [ ] Background playback (opt-in configuration)
-- [ ] Device rotation control (opt-in configuration)
-- [ ] Status bar controls (opt-in configuration)
+- [-] Background playback (opt-in configuration)
+- [-] Device rotation control (opt-in configuration)
+- [-] Status bar controls (opt-in configuration)
 
 ## Running the example
 
@@ -129,16 +122,6 @@ To run all unit tests:
 
 ```sh
 very_good test --coverage
-```
-
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
-
-```sh
-# Generate coverage report
-genhtml coverage/lcov.info -o coverage/
-
-# Open coverage report
-open coverage/index.html
 ```
 
 [very_good_cli_link]: https://pub.dev/packages/very_good_cli

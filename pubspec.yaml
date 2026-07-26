@@ -1,6 +1,6 @@
 name: core_video_player
-description: A customizable video player widget for Flutter.
-version: 1.1.0
+description: A customizable video player widget for Flutter. Playback controls (play/pause, seek, forward/rewind 10s, speed, resolution switching) and other features.
+version: 1.1.1
 homepage: https://github.com/jbarretojr/core-video-player
 
 environment:

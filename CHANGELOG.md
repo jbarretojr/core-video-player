@@ -1,3 +1,6 @@
+## v1.1.1
+- Update the project example and documentation.
+
 ## v1.1.0
 - Updates all package dependencies and adds a complete example with various features of the video plugin.
 
